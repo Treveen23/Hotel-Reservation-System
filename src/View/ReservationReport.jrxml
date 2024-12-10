@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dfaa2d31-99d3-4481-b7ed-0fc34926bb68">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    g.guest_id,
+    g.first_name,
+    g.last_name,
+    g.email,
+    g.phone,
+    r.reservation_no,
+    r.room_no,
+    r.check_in_date,
+    r.check_out_date,
+    r.nights,
+    r.total_amount,
+    r.payment_method
+FROM 
+    guest g
+JOIN 
+    reservation r ON g.guest_id = r.guest_id
+WHERE 
+    r.check_in_date >= '2024-11-01' AND r.check_out_date <= '2024-11-30';]]>
+	</queryString>
+	<field name="guest_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="reservation_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="room_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check_in_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="check_out_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nights" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_amount" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_method" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="157" y="0" width="285" height="21" uuid="578fe53a-a199-4282-98ed-8fafa3641787"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial Rounded MT Bold" size="16"/>
+				</textElement>
+				<text><![CDATA[MONTHLY RESERVATION REPORT          ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="83" width="100" height="20" uuid="86fc1248-40d6-435e-9068-506015d87bf0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tel: 0312270537]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="129" height="20" uuid="c442e50a-5289-4423-8bca-a7cac659e784"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No.175 Lewis Pl,Negombo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="49" width="100" height="14" uuid="dacb7fe0-7032-4af9-9a93-422ee88f84b2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Reg No:RG00154]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="119" height="38" uuid="7595028f-d7f8-4329-aeb5-1494fcc0c4b9"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AZURE BLOOM RESORT & SPA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="49" width="131" height="20" uuid="e90967ec-4db1-41ec-b864-0be3879a1097"/>
+				<text><![CDATA[Duration From : 2024/11/01]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="69" width="77" height="20" uuid="32083788-5242-4885-a1a3-1c756f9c1f09"/>
+				<text><![CDATA[To : 2024/11/30]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="52" height="20" uuid="98a902e4-5862-44fc-9030-5197f5845607"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Guest ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="20" width="69" height="20" uuid="34b9f63e-3bc6-45d8-8551-0570b9822607"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Guest Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="20" width="70" height="20" uuid="7f2938ad-8ae8-4967-956a-e015d2d95bb0"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="20" width="64" height="20" uuid="a95b0ff5-77b4-464c-8e9f-283247576751"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="20" width="41" height="20" uuid="ead66ce2-82a9-4e78-86cb-5309436ac414"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nights]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="464" y="20" width="79" height="20" uuid="e5a037c3-8f8f-4e18-b559-15c328d9dbde"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="6" width="555" height="1" uuid="bb3902c6-e030-4fcd-9a79-dea9666ec787"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="47" width="555" height="1" uuid="7f3803a9-c023-4b43-ab3f-5ae32ff3b613"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="2" width="42" height="20" uuid="fdf281af-048e-458f-872c-5345856970de"/>
+				<textFieldExpression><![CDATA[$F{guest_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="0" width="46" height="20" uuid="a7f09751-16b8-494d-b0f3-b9a8f2c6dbc6"/>
+				<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="2" width="84" height="20" uuid="bc820275-14a3-4464-8ed6-b32921a441e7"/>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="2" width="44" height="20" uuid="5008088f-1445-494f-8627-b4ed7af206c9"/>
+				<textFieldExpression><![CDATA[$F{room_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="2" width="16" height="20" uuid="0ddc0516-d1d9-4f6b-aa76-46dfd2a6cf14"/>
+				<textFieldExpression><![CDATA[$F{nights}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="2" width="41" height="20" uuid="ec303604-c491-41b6-b73a-802042925a43"/>
+				<textFieldExpression><![CDATA[$F{total_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="63" height="20" uuid="072bf83e-198d-45fb-930e-434f85a041ed"/>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="23" width="555" height="1" uuid="9ca92b46-1df0-4358-8d24-01f2c849421d"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="84" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="20" uuid="4a2961fd-707c-4a53-bd8d-8aa40bbeaef9"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Created Date]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="59" width="100" height="1" uuid="a76f030e-1264-4618-92c4-e65696796cc7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="455" y="59" width="100" height="20" uuid="0e3c36a1-c80e-41dc-812c-d6eb3b4e5375"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Certified By]]></text>
+			</staticText>
+			<line>
+				<reportElement x="455" y="58" width="100" height="1" uuid="85d5b4ba-6d24-4e50-9634-5ec0a1e376b9"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="8" width="555" height="1" uuid="98ed7ff4-39e1-463c-a18d-0d0239055a59"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="15" width="555" height="1" uuid="ef124418-8e50-407e-83bb-6b712610fa8c"/>
+				<graphicElement>
+					<pen lineWidth="10.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="19" splitType="Stretch"/>
+	</summary>
+</jasperReport>
